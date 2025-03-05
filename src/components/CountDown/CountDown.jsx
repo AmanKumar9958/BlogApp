@@ -30,6 +30,8 @@ const CountDown = () => {
         const timer = setInterval(() => {
             setTimeLeft(calculateTimeLeft());
         }, 1000);
+
+        return () => clearInterval(timer);
     }, []);
 
     return (

@@ -109,12 +109,12 @@ export class DatabaseService{   // class DatabaseService
     }
 
     // file delete method
-    async deleteFile(fileId){
+    async deleteFile(fileId) {
         try {
-            return await this.bucket.deleteFile()(
+            return await this.bucket.deleteFile(
                 config.appwriteBucketId,
                 fileId,
-            )
+            );
         } catch (error) {
             throw error;
         }
@@ -122,12 +122,12 @@ export class DatabaseService{   // class DatabaseService
 
     // file preview method
     async previewFile(fileId){
-        try {
-            return await this.bucket.getFileView()(
+        try{
+            return await this.bucket.getFileView(
                 config.appwriteBucketId,
                 fileId,
-            )
-        } catch (error) {
+            );
+        } catch (error){
             throw error;
         }
     }
